@@ -58,7 +58,7 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Use sqlite3 as the database for Active Record
-  gem "sqlite3", "~> 1.4"
+  # gem "sqlite3", "~> 1.4"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
@@ -66,10 +66,10 @@ group :development do
   gem "pry-rails", "~> 0.3.9"
 end
 
-group :production do
+# group :production do
 gem "pg", "~> 1.4"
 
-end
+# end
 
 gem "tailwindcss-rails", "~> 2.0"
 
