@@ -90,3 +90,6 @@ gem "meta-tags", "~> 2.17"
 gem "toastr-rails", "~> 1.0"
 
 gem "ruby-lsp", "~> 0.3.2", :group => :development
+
+
+gem 'hiredis'
