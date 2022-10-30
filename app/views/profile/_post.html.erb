@@ -1,0 +1,23 @@
+    <% @posts.each do |post| %>
+    <div class="col-4">
+    <%= link_to post_path(post) do %>
+  <div class="post-stat d-flex justify-content-center align-items-center">
+  <span>
+  <i class="bi bi-suit-heart" arial-hidden="true"></i>
+  <%= post.likes.size %>
+  <i class="bi bi-chat" arial-hidden="true"></i>
+  <%= post.comments.size %>
+  </span>
+  </div>
+  
+  <% if post.file.image? %>
+                    <%= image_tag post.file, class: "card-img-top image-preview" %>
+                      <% elsif post.file.video? %>
+        
+              <%= video_tag url_for(post.file), style: "height: 338px; width: 100%;",class: "card-img-top image-preview", controls: true %>
+        
+    <% end %>
+
+    <% end %>
+    </div>
+    <% end %>

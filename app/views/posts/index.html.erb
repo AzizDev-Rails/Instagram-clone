@@ -1,0 +1,14 @@
+
+<% if user_signed_in? %>
+  <%= turbo_stream_from "posts_list" %>
+ 
+  <div id="posts" style="margin-top: 10px;">
+    <% @posts.each do |post| %>
+      
+      <%= render partial: "posts/post", locals: { post: post, user: current_user } %>
+  
+    <% end %>
+  </div>
+<% else %>
+  <p class="text-center">Please sign in <%= link_to "here", new_user_session_path %>.</p>
+<% end %>

@@ -1,0 +1,80 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "signup" %>
+  <link href="https://fonts.googleapis.com/css2?family=Amita&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <title>Sign up &bull; Instagram</title>
+</head>
+
+<body>
+  <div id="SignupContainer">
+    <div class="signupBox">
+      <header>
+        <h2>Instagram</h2>
+        <p>Sign up to see photos and videos from your friends.</p>
+        <button><i class="fab fa-facebook"></i>Log in with Facebook</button>
+      </header>
+      <div class="seperator">
+        <hr>OR<hr>
+      </div>
+  <div class="actions">
+    
+  </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+      <form action="#">
+      <%= f.text_field :username, autofocus: true, placeholder: "Username"%>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>        
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation" %>
+      <%= f.submit "Sign up", data: {turbo: false}%>
+      </form>
+<% end %>
+      <footer>
+        <p>
+          By signing up, you agree to our <a href="#">Terms , Data Policy</a> and <a href="#">Cookies Policy</a> .
+        </p>
+      </footer>
+    </div>
+  </div>
+  <div id="BottomContainer">
+    <p>
+      Have an account? <%= link_to "Login", new_user_session_path %>
+    </p>
+  </div>
+  <div id="AppsContainer">
+    <p>Get the app.</p>
+    <img src="https://i.postimg.cc/Vkm7D9Xd/appstore.png" alt="appstore">
+    <img src="https://i.postimg.cc/R00gzMsm/playstore.png" alt="playstore">
+  </div>
+  <div id="LastContainer">
+    <div class="links">
+      <a href="#">ABOUT</a>
+      <a href="#">HELP</a>
+      <a href="#">PRESS</a>
+      <a href="#">API</a>
+      <a href="#">JOBS</a>
+      <a href="#">PRIVACY</a>
+      <a href="#">TERMS</a>
+      <a href="#">LOCATIONS</a>
+      <a href="#">TOP ACCOUNTS</a>
+      <a href="#">HASH TAGS</a>
+      <a href="#">LANGUAGE</a>
+    </div>
+    <div class="copyright">
+      <p>&copy; <%= Time.current.year %> INSTAGRAM </p>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

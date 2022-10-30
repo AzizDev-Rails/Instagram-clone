@@ -1,0 +1,177 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.clearfix {
+  clear: both;
+}
+
+body {
+  background: white;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.instacard {
+  border: 1px solid #ccc;
+  margin-bottom: 2rem;
+}
+
+.instacard-header {
+  height: 60px;
+  padding: 1rem;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.instacard-profile-image {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  float: left;
+}
+
+.instacard-profile-name {
+  float: left;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #262626;
+  margin-left: 1rem;
+}
+
+.instacard-actions {
+  float: right;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.instacard-image {
+  width: 100%;
+}
+
+.instacard-like-icon,
+.instacard-comment-icon,
+.instacard-share-icon,
+.instacard-save-icon {
+  padding: 8px;
+  float: left;
+}
+
+.instacard-like-icon {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.instacard-save-icon {
+  float: right;
+}
+
+.instacard-likes {
+  padding: 0 16px;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.instacard-comment-profile {
+  font-weight: 600;
+}
+
+.instacard-comments {
+  padding: 0 16px;
+}
+
+.instacard-comment {
+  margin-bottom: 4px;
+  line-height: 18px;
+  padding: 0;
+}
+
+.instacard-comment-like-icon {
+  float: right;
+  width: 12px;
+  height: 12px;
+}
+
+.instacard-comment-form {
+  border-top: 1px solid #ccc;
+}
+
+.instacard-comment-form .instacard-comment-form-input {
+  border: 1px solid white;
+  font-size: 0.9rem;
+  color: #262626;
+  padding: 1rem;
+  width: 100%;
+}
+
+::placeholder,
+::-ms-input-placeholder {
+  color: #8e8e8e;
+}
+
+input:focus {
+  outline: none;
+}
+
+.instacard-comment-form .instacard-comment-form-submit {
+  color: #0095f6;
+  font-weight: 400;
+}
+
+.target-highlight {
+  -webkit-animation: target-fade 2s 1;
+  -moz-animation: target-fade 2s 1;
+}
+
+@-webkit-keyframes target-fade {
+  0% { background-color: rgba(255,255,153,.8); }
+  100% { background-color: rgba(255,255,153,0); }
+}
+@-moz-keyframes target-fade {
+  0% { background-color: rgba(255,255,153,.8); }
+  100% { background-color: rgba(255,255,153,0); }
+}
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 14.5px;
+    /* margin-top: -50px; */
+}
+}
+img{
+  height: -1;
+}
+.bg-light{
+  align-items: center;
+  background-color: rgb(var(--ig-primary-background));
+  border-bottom: 1px solid rgb(var(--ig-elevated-separator));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: var(--desktop-nav-height);
+  position: fixed;
+  top: 0;
+  transition: height var(--desktop-nav-anim-duration) ease-in-out;
+  width: 100%;
+  z-index: 3;
+}
+/* .row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: calc(var(--bs-gutter-y) * -1); */
+  /* margin-right: calc(var(--bs-gutter-x) * -.5); */
+  /* margin-left: calc(var(--bs-gutter-x) * -.5); */
+  /* margin-top: -50px; */
+/* } */
+/* .navbar-expand-lg .navbar-collapse {
+  display: flex!important;
+  flex-basis: auto;
+  margin-top: -50px;
+
+} */

@@ -1,0 +1,24 @@
+<h6 >
+
+        
+        <% if current_user %>
+    <%= render 'profile/follow_button', user: user %>
+            
+        <% end %>
+        
+
+
+
+<style>
+.aziz{
+color: blue;
+
+}
+</style>
+<br />
+<p>
+ <%= pluralize(@user.posts.count, "post") %>
+
+<%= render 'profile/follower_count', user: user %>
+<%= user.followees.count %> following</p>
+

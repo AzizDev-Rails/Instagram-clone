@@ -1,0 +1,35 @@
+<link href="style.css" rel="stylesheet" />
+
+
+<div class="action-nav">
+  <div class="profile-nav" onclick="menuToggle();">
+	<img src="../app/assets/images/ava.png" class="img-nav"/>
+  </div>
+  <div class="menu_nav">
+	<h3 class="h3-nav">Someone Famous<br /><span class="span-nav">Website Designer</span></h3>
+	<ul class="ul-nav">
+	  <li class="li-nav">
+		<a class="a-nav" href="#">My profile</a>
+	  </li>
+	  <li class="li-nav">
+		<a class="a-nav"  href="#">Edit profile</a>
+	  </li>
+	  <li class="li-nav">
+		<a class="a-nav"href="#">Inbox</a>
+	  </li>
+	  <li class="li-nav">
+		<a class="a-nav" href="#">Setting</a>
+	  </li>
+	  <li class="li-nav"><a class="a-nav"  href="#">Help</a></li>
+	  <li class="li-nav">
+		<a class="a-nav" href="#">Logout</a>
+	  </li>
+	</ul>
+  </div>
+</div>
+<script>
+  function menuToggle() {
+	const toggleMenu = document.querySelector(".menu_nav");
+	toggleMenu.classList.toggle("active");
+  }
+</script>

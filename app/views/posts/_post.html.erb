@@ -1,0 +1,68 @@
+
+<div class="instacard bg-white"style="width: 35%; border-radius: 8px; margin-left: 340px;" id="post-<%= post.id %>">
+  <div class="instacard-header">
+    <%# <span class="instacard-actions">···</span> %>
+    
+             <%= link_to "Show", post, class: "instacard-actions" %>
+        
+            
+              
+    <div><%= image_tag post.user.avatar, class: "instacard-profile-image"  if post.user.avatar.attached? %></div>
+    <span class="instacard-profile-name"><%= link_to post.user.username, profile_path(post.user) %></span>
+  </div>
+      
+  <div class="border">
+    <% if post.file.image? %> <a href="">
+      <%= image_tag post.file, class: "instacard-image" %></a>
+      <% elsif post.file.video? %>
+        <a href="">
+              <%= video_tag url_for(post.file), style: "height: 338px; width: 100%;", controls: true %></a> 
+        
+    <% end %>
+  
+  
+  </div>
+  <div class="grid grid-cols-12 gap-0 justify-items-start grid-flow-col">
+    <div id="likes-post-<%= post.id %>"><%= render partial: "likes/like", locals: { post: post, user: user } %></div>    
+    <div><%= image_tag "comment.png", class: "instacard-comment-icon" %></div>
+    <div><%= image_tag "share.png", class: "instacard-share-icon" %></div>
+    <div class="col-span-9 justify-self-end"><div id="bookmarks-post-<%= post.id %>"><%= render partial: "bookmarks/bookmark", locals: { post: post, user: user } %></div></div>
+  </div>
+
+  <div class="instacard-likes" id="likes-post-count-<%= post.id %>">
+    <%= render partial: "posts/likes_count", locals: { count: post.likes.count } %>
+  </div>
+  <div class="instacard-body p-4 bg-white">
+  
+    <% if post.body.length > 50 %>
+      <div class='textControl'><%= truncate(post.body, length: 50) %></div>
+      <div class='textControl' style='display:none;'><%= simple_format post.body %></div>
+      <%= link_to '...Read more', '', class: "read-more-#{post.id} textControl" %>
+
+      <script>
+        $('.read-more-<%= post.id %>').on('click', function(e) {
+          e.preventDefault();
+          $('.textControl').toggle();
+        })
+      </script>
+    <% else %>
+      <%= simple_format post.body %>
+    <% end %>
+  
+   </div>
+
+  <div class="instacard-comments" id="post-comments-<%= post.id %>">
+    <% post.comments.order(created_at: :desc).each do |comment| %>
+      <%= render comment %>
+    <% end %>
+  </div>
+  <p style="font-size: 11px; margin-left: 10px;"><%= time_ago_in_words(post.created_at) %> ago</p>
+  
+  <div class="instacard-comment-form" id="post-comment-form-<%= post.id %>">
+    <%= render partial: "comments/new", locals: { post: post, comment: Comment.new } %>
+  </div>
+</div>
+<style>
+
+
+</style>

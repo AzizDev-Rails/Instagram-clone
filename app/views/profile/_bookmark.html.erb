@@ -1,0 +1,25 @@
+           <% bookmarks.each do |bookmark| %>
+        <% if bookmark.user.id == @user.id %>
+        <div class="col-4">
+        <%= link_to post_path(bookmark) do %>
+  <div class="post-stat d-flex justify-content-center align-items-center">
+  <span>
+  <i class="bi bi-suit-heart" arial-hidden="true"></i>
+  <%= bookmark.post.likes.size %>
+  <i class="bi bi-chat" arial-hidden="true"></i>
+  <%= bookmark.post.comments.size %>
+  </span>
+  </div>
+  
+  <% if bookmark.post.file.video? %>
+   <%= video_tag url_for(bookmark.post.file), style: "height: 338px; width: 100%;", controls: true %></a> 
+   <% elsif bookmark.post.file.image? %>
+  <%= image_tag bookmark.post.file, class: "card-img-top image-preview" %>   
+  <% end %>
+  
+        <% end %>
+        </div>
+         <% end %>
+         <% end %>
+
+    
